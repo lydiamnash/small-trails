@@ -3,6 +3,8 @@ class TrailsController < ApplicationController
 
   # GET /trails or /trails.json
   def index
+    response = ::TrailFetcher.new.get
+    puts response.read_body
     @trails = Trail.all
   end
 
